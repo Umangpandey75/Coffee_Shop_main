@@ -1,129 +1,195 @@
-# MsCafe ☕️
+# ☕ MsCafe — Premium Coffee Shop Web Application
 
-MsCafe was founded with a simple mission: to serve the best coffee in town. Our passion for quality beans and expert brewing techniques has made us a favorite among coffee enthusiasts. We source our beans from sustainable farms around the world, ensuring that every cup of coffee you enjoy is not only delicious but also ethically produced.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" />
+</p>
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+---
 
-## Project Overview
+## 🌟 About MsCafe
 
-MsCafe is a web application that offers an elegant, user-friendly interface for browsing our extensive coffee menu, placing online orders, and learning about our sustainably sourced beans. Whether you’re looking to order your favorite brew or learn more about coffee origins, MsCafe provides an excellent user experience for every coffee lover.
+**MsCafe** was founded with a simple, yet passionate mission: **to serve the ultimate coffee experience**. Our journey begins with ethically sourcing premium coffee beans from sustainable, independent farms around the globe and ends with expert brewing techniques that unlock rich, complex flavors in every single cup.
 
-## Features
-- **Browse Menu:** Explore our coffee varieties with detailed descriptions and pricing.
-- **Sustainability Info:** Learn about our ethical sourcing and the farms we partner with.
-- **Responsive Design:** The website is fully responsive for desktops, tablets, and mobile devices.
-- **Order Coffee:** Add items to your cart and place orders (future feature).
+This web application brings the premium physical experience of MsCafe to the digital world. Crafted with a modern user experience in mind, it allows coffee lovers to explore our curated menu, understand the origin and roast profiles of our beans, and interactively customize their virtual orders.
 
-## Tech Stack
-- **Frontend:** React, CSS
-- **State Management:** React Context API
-- **Backend:** Node.js, Express (planned for future)
-- **Database:** MongoDB (planned for future)
+---
 
-## Installation
+## 🚀 Key Features
+
+*   ✨ **Elegant Menu Explorer:** Browse through rich selections of espresso drinks, cold brews, pour-overs, and custom blends with detailed ingredient lists and notes.
+*   🌱 **Seed-to-Cup Transparency:** A dedicated space highlighting our partners, sustainable farming practices, and ethical supply chain.
+*   🎨 **Sleek, Modern UI:** A fully responsive, modern layout optimized for desktops, tablets, and mobile devices, using fluid Tailwind utility classes and rich color schemes.
+*   🛒 **Interactive Cart System:** Seamless state-managed cart using React Context API, allowing users to add, customize, and review their selections.
+*   🐳 **Production-Ready Docker Setup:** Pre-configured Docker environment optimized with multi-stage builds and a lightweight Nginx web server.
+
+---
+
+## 📊 Application Flow
+
+Here is the flow of user interaction and state management within the MsCafe application:
+
+```mermaid
+flowchart TD
+    Start([User visits MsCafe]) --> Main{Explore App}
+    
+    %% User Actions
+    Main -->|Browse Menu| Menu[Menu Explorer]
+    Main -->|Read Sourcing Story| Sourcing[Seed-to-Cup Transparency]
+    
+    %% Menu Flow
+    Menu -->|View Details| ProductDetails[Roast Profile, Origin & Ingredients]
+    ProductDetails -->|Select Customizations| Customize[Customize Order]
+    Customize -->|Add to Cart| CartAction[Trigger Cart Action]
+    
+    %% State Flow
+    CartAction -->|Context API State Change| CartState[(Global Cart Context)]
+    CartState -->|Update UI| Navbar[Navbar Cart Badge & Summary]
+    CartState -->|Render List| CartDrawer[Interactive Cart Drawer]
+    
+    %% Actions within Cart
+    CartDrawer -->|Edit Quantity / Remove| CartState
+    CartDrawer -->|Checkout| Checkout([Express Order Placement - Future])
+    
+    %% Sourcing Flow
+    Sourcing -->|Learn Sourcing| Farms[Ethical Farm Partners]
+    Farms -->|Shop Associated Roasts| Menu
+
+    %% Styles
+    classDef mainNode fill:#8B5A2B,stroke:#3E2723,stroke-width:2px,color:#fff;
+    classDef pageNode fill:#D2B48C,stroke:#3E2723,stroke-width:1px,color:#000;
+    classDef stateNode fill:#FFF8DC,stroke:#8B5A2B,stroke-width:2px,color:#000;
+    classDef endNode fill:#E6D5B8,stroke:#8B5A2B,stroke-width:2px,color:#3E2723;
+    
+    class Start,Main mainNode;
+    class Menu,Sourcing,ProductDetails,Customize,Farms pageNode;
+    class CartAction,CartState,Navbar,CartDrawer stateNode;
+    class Checkout endNode;
+```
+
+---
+
+
+## 🛠️ Architecture & Tech Stack
+
+### Frontend Core
+- **React.js:** Component-driven user interface architecture.
+- **React Context API:** Centralized state management for the shopping cart, active views, and interactive themes.
+
+### Styling & Design
+- **Tailwind CSS:** Responsive grid system, custom typography, utility styling, and sleek hover effects.
+- **Headless UI & Heroicons:** Fully accessible UI components and modern vector icons.
+
+### Deployment & DevOps
+- **Docker:** Multi-stage builds to minimize image sizes (under 30MB).
+- **Nginx:** High-performance, lightweight web server configured for client-side routing.
+
+---
+
+## 📦 Getting Started & Installation
+
+Follow these steps to set up a local development copy of MsCafe.
 
 ### Prerequisites
-Before you begin, ensure you have installed the following:
-- [Node.js](https://nodejs.org/) (v14.x or higher)
-- [npm](https://www.npmjs.com/) (v6.x or higher)
 
-### Setup
-Follow the steps below to set up the project locally:
+Ensure you have the following installed on your machine:
+*   [Node.js](https://nodejs.org/) (v18.0.0 or higher recommended)
+*   [npm](https://www.npmjs.com/) (v9.0.0 or higher) or Yarn
+*   [Docker](https://www.docker.com/) (Optional, for containerized environments)
 
-#### Step 1: Clone the repository
+### 1. Local Installation
+
 ```bash
-# Clone the MsCafe repository
-git clone https://github.com/your-username/ms-cafe.git
+# Clone the repository
+git clone https://github.com/Umangpandey75/Coffee_Shop_main.git
 
-# Navigate into the project directory
-cd ms-cafe
- # Install the required npm packages
+# Navigate into the project root directory
+cd Coffee_Shop_main
+
+# Install all development and application dependencies
 npm install
-# Start the React development server
+```
+
+### 2. Running the Development Server
+
+Start the interactive development server:
+
+```bash
 npm start
 ```
-Once the server is running, you can view the app at (http://localhost:3000).
-## Usage
-**To use the app:**
-- **View Coffee Menu:** Browse through the available coffee items on the homepage.
-- **Learn About Coffee:** Check out the sourcing section to learn more about our sustainably sourced beans.
-- **Place an Order:** In future releases, you'll be able to add items to the cart and complete orders.
 
-## ScreenShots:
-## **Home Page:** 
-![homepage](https://github.com/user-attachments/assets/2dc9b51d-ce06-4eb6-89fb-774867ede12c)
-## **Coffee Menu:**
-![coffeemenu](https://github.com/user-attachments/assets/014c6a7a-03ab-4bdf-88e1-bb3c11d66447)
-## **Login Page**
-![coffeelogin](https://github.com/user-attachments/assets/c6c7c645-475d-4658-a47c-f0ada0b177d1)
-## **Testimonials**
-![testimonials](https://github.com/user-attachments/assets/38d811e3-4acc-4901-9a3d-8e4185c96a2c)
-## Contributing
-We welcome contributions! Follow the steps below to contribute to this project:
+*   The application will automatically launch in your browser.
+*   If it does not, visit: [http://localhost:3000](http://localhost:3000)
+*   The page will reload automatically whenever you modify any file in the workspace.
+
+---
+
+## 🐳 Docker Deployment
+
+For staging or production deployments, use the provided multi-stage Docker environment.
+
+### Build the Image
+To build the optimized production image:
 ```bash
-# Click the "Fork" button at the top-right of the repository page to create a copy in your GitHub account.
-```
-```bash
-# Clone the forked repository to your local machine
-git clone https://github.com/your-username/ms-cafe.git
-```
-```bash
-# Navigate into the project directory
-cd ms-cafe
-```
-```bash
-#install dependencies
-npm install
-```
-```bash
-# Create a new branch for your feature or fix
-git checkout -b feature/your-feature-name
-```
-```bash
-# Make Your Changes
-Make sure your changes adhere to the project standards and structure.
-# Stage all changes
-git add .
-```
-```bash
-# Commit the changes with a descriptive message
-git commit -m "Description of the feature or fix"
-```
-```bash
-# Push your branch to your forked repository
-git push origin feature/your-feature-name
-```
-```bash
-# Go to the original repository on GitHub and open a new Pull Request
-# Provide a clear description of your changes in the Pull Request.
+docker build -t mscafe-app:latest .
 ```
 
+### Run the Container
+Run the container on port `80` (or map it to any port you prefer):
+```bash
+docker run -d -p 80:80 --name mscafe-container mscafe-app:latest
+```
+Open [http://localhost](http://localhost) in your browser to view the application served by Nginx.
 
-<div>
-  <h2 align="center"><img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" width="35" height="35"> Our Contributors</h2>
-  <div align="center">
-    <h3>Thank you for contributing to our project</h3
-<p align="center">
-      <a href="https://github.com/Mujtabaa07/coffeeShop/graphs/contributors">
-        <img src="https://api.vaunt.dev/v1/github/entities/Mujtabaa07/repositories/coffeeShop/contributors?format=svg&limit=54" width="700" height="250" />
-      </a>
- </p>
-<a href="https://github.com/Mujtabaa07/coffeeShop/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Mujtabaa07/coffeeShop&max=300" />
-</a>
-    
+---
 
+## 📁 File Structure
 
-  </div>
-</div>
+Here is a breakdown of the key files in the repository:
 
+```
+Coffee_Shop_main/
+├── public/                 # Static assets, site icons, and index.html
+├── src/                    # Source code files
+│   ├── components/         # Reusable UI components (Navbar, Footer, Menu Card, etc.)
+│   ├── contexts/           # React Context files (CartContext, ThemeContext)
+│   ├── data/               # Static menu items, farmers list, and mock data
+│   ├── App.js              # Core entry component
+│   └── index.js            # React DOM mounting and global styling
+├── Dockerfile              # Multi-stage Docker build configuration
+├── nginx.conf              # Nginx custom server configuration for React routing
+├── tailwind.config.js      # Custom theme colors, spacing, and Tailwind rules
+├── postcss.config.js       # PostCSS plugins configuration
+└── package.json            # Application dependencies and lifecycle scripts
+```
 
-<h3 align="center"> Happy Coding ☕️</h3>
+---
+
+## ⚙️ Configuration Files Explained
+
+- **`Dockerfile`:** Uses a two-stage approach. First, `node:18` builds the static production bundle (`npm run build`). In the second stage, a lightweight `nginx:stable-alpine` image copies the built files to the Nginx web root and runs the server, ensuring tiny images and high performance.
+- **`nginx.conf`:** Custom routing config ensuring that all SPA paths are redirected to `index.html` (resolving React router refresh issues).
+- **`tailwind.config.js`:** Extends the default Tailwind theme to include brand-specific warm colors, custom coffee-toned palettes, and font families.
+
+---
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
+
+Please review our [CONTRIBUTING.md](CONTRIBUTING.md) and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+---
+
+## 📄 License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
