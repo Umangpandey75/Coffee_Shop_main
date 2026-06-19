@@ -176,20 +176,27 @@ Coffee_Shop_main/
 
 ---
 
-## 🤝 Contributing
+## 👨‍💻 Author
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+<div align="center">
 
-1. Fork the Project.
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the Branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+### **Umang Pandey**
+*B.Tech CSE — NITRA Technical Campus, Ghaziabad*
+*Python Developer · Data Analyst · ML Engineer*
 
-Please review our [CONTRIBUTING.md](CONTRIBUTING.md) and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:umangpandey.co@gmail.com)
+&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/umang-pandey-01b486273)
+&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Umangpandey75)
+&nbsp;
+[![Portfolio](https://img.shields.io/badge/Portfolio-f953c6?style=for-the-badge&logo=vercel&logoColor=white)](https://umangpandey.vercel.app)
+
+*"Query the data. Build the insight. Ship the WOW. ✨"*
+
+</div>
 
 ---
-
 ## 📄 License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
